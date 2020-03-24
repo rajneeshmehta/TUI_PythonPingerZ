@@ -3,7 +3,7 @@ os.system("tputsetaf 1")
 print("""\t\t\tWelcome to Our TUI
 				Created by PythonPingerZ""")
 os.system("tput setaf 7")
-print(\t\t\t-------------------------------------------------------")
+print("\t\t-------------------------------------------------------")
 print("""Press 1: to see Date
 Press 2 :to check cal
 Press 3 : conf web server
