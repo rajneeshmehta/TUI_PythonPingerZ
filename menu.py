@@ -14,4 +14,18 @@ Press 5 :create file
 Press 6 :to setup NetWork
 Press 7 :to exit""")
 choice = int(input("Enter your choice : "))
-print(choice)
+if choice == 1:
+    os.system("date")
+elif choice == 2:
+    os.system("cal")
+elif choice == 3:
+    os.system("")
+elif choice == 4:
+    os.system("")
+elif choice == 5:
+    os.system("")
+elif choice == 6:
+    os.system("")
+elif choice == 7:
+    os.system("")
+
