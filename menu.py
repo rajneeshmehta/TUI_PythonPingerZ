@@ -83,4 +83,4 @@ Press 7 :to exit         """)
     os.system("tput setab {}".format(global_background))
 
     os.system("clear")
-#lets say we have made some random changes in this file even that is comment     
+#I've changed comment     
