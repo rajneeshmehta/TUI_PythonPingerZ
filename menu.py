@@ -94,4 +94,3 @@ Press 0 :to exit
     os.system("tput setab {}".format(global_background))
 
     os.system("clear")
-#I've changed comment
