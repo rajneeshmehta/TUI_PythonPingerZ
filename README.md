@@ -7,3 +7,10 @@ This project is Maiintained by
 3. [Gourav Singh Jadon](https://github.com/gourav-jadon)
 4. [Ravindra Jangid](https://github.com/ravindrajangid00007)
 5. [Kartik Prajapat](https://github.com/Kart1k5)
+
+
+#Suggested Features:<h1>
+ 1. add docker with web server configured
+ 2. Improve GUI like color combinition, Welcome text
+ 3. ssh login with public and private keys
+ 4. 
