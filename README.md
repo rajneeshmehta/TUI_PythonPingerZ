@@ -9,7 +9,7 @@ This project is Maiintained by
 5. [Kartik Prajapat](https://github.com/Kart1k5)
 
 
-#Suggested Features:<h1>
+#<h1>Suggested Features:
  1. add docker with web server configured
  2. Improve GUI like color combinition, Welcome text
  3. ssh login with public and private keys
