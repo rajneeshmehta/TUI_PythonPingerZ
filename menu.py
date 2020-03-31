@@ -27,15 +27,15 @@ while choice != 0:
     os.system("tput setab {}".format(options_background))
 
     print("""
-Press 1: to see Date
-Press 2 :to check cal
-Press 3 :conf web server*
-Press 4 :to ceate user
-Press 5 :create file
-Press 6 :to setup NetWork*
+Press 1: to see Date                         
+Press 2 :to check cal                        
+Press 3 :conf web server*                    
+Press 4 :to ceate user                       
+Press 5 :create file                         
+Press 6 :to setup NetWork*                   
 Press 7 :to check program is installed or not
-Press 0 :to exit
-*These files are not completed.    """)
+Press 0 :to exit                             
+* Not completed                              """)
     os.system("tput setaf {}".format(choice_text))
     os.system("tput setab {}".format(choice_background))
     choice = int(input("Enter your choice : "))
