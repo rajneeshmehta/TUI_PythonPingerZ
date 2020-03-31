@@ -34,6 +34,8 @@ Press 4 :to ceate user
 Press 5 :create file                         
 Press 6 :to setup NetWork*                   
 Press 7 :to check program is installed or not
+press 8 :to find location of software
+press 9 :to kill any process 
 Press 0 :to exit                             
 * Not completed                              """)
     os.system("tput setaf {}".format(choice_text))
@@ -56,8 +58,14 @@ Press 0 :to exit
         elif choice == 6:
             os.system("")
         elif choice == 7:
-            programName = str(input("Please enter the program name you want to check if it is installed or not: "))
+            programName = input("Please enter the program name you want to check if it is installed or not: ")
             os.system("rpm -q {}".format(programName))
+        elif choice == 8:
+            softwareName = input("Please enter the software name you want to find  location:")
+            os.system("which {}".format(softwareName))
+        elif choice == 9:
+            programName = input("Please enter the program name you want to kill: ")
+            os.system("killall {}".format(programName))
         elif choice == 0:
             os.system("tput setaf {}".format(exit_text))#before exiting make text white
             os.system("tput setab {}".format(exit_background))#and background black
@@ -87,6 +95,12 @@ Press 0 :to exit
             os.system("tput setab {}".format(exit_background))#and background black
             os.system("clear")#clear the screen
             exit()
+        elif choice == 8:
+            softwareName = input("Please enter the software name you want to find  location:")
+            os.system("ssh {} which {}".format(Server_IP,softwareName))
+        elif choice == 9:
+            programName = input("Please enter the program name you want to kill: ")
+            os.system("ssh {} killall {}".format(Server_IP,programName))
 
     os.system("tput setaf {}".format(continue_text))
     os.system("tput setab {}".format(continue_background))
