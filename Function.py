@@ -1,5 +1,6 @@
 #import neccessory module
 import os 
+import getpass as gp
 #these variable acts as switch for changing the color
 global_background = 63
 welcome_text = 4
@@ -18,7 +19,7 @@ server_ip_text = 4
 server_ip_background = 10
 continue_text = 4
 continue_background = 13
-
+key = "Red@hat"
 def Message():
     os.system("tput setab {}".format(global_background))
 
@@ -33,3 +34,12 @@ def Message():
     os.system("tput setab {}".format(created_background))
     print("\t\t\t     Created by PythonPingerZ     ")
 
+
+def protect():
+    password = gp.getpass("Enter your password to proceed:")
+    if password == key:
+        lock = 1
+    else :
+        lock = 0
+    return lock
+        
