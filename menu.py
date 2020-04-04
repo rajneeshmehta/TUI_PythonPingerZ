@@ -1,7 +1,7 @@
 #these variable acts as switch for changing the color
 # import out user define function as well as variables
 from Function import *
-import getpass
+
 Message()
 
 os.system("tput setaf {}".format(location_text))
