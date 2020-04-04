@@ -1,10 +1,18 @@
 #these variable acts as switch for changing the color
 # import out user define function as well as variables
 from Function import *
+import getpass
 Message()
 
 os.system("tput setaf {}".format(location_text))
 os.system("tput setab {}".format(location_background))
+
+passwd = getpass.getpass("enter your password")
+realone = "rgrkr"
+if passwd != realone:
+	print("authentication error")
+	exit()
+
 location = input("\nEnter where you want to run command(local or remote): ")
 
 if location == "remote":
