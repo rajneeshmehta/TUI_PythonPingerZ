@@ -1,8 +1,9 @@
-#these variable acts as switch for changing the color
 # import out user define function as well as variables
 from Function import *
-Message()
 
+Message()
+protect() # show message and ask for pasword
+Message() #If passwaord is right then clear screen and show message again
 os.system("tput setaf {}".format(location_text))
 os.system("tput setab {}".format(location_background))
 while True:
@@ -34,6 +35,7 @@ if location == "remote":
 choice = -1  #let -1 be default
 
 while choice != 0:
+<<<<<<< HEAD
     Message()
 
 
@@ -195,39 +197,18 @@ press 0:to exit from Docker's World""")
             os.system("clear")#clear the screen
             exit()
 
+=======
+    
+    
+    if location == "local":
+        options()
+        choice = int(input("Enter your choice : "))
+        local(choice)
+    
+>>>>>>> 4dcf651ea56fd03a9a4fac8e9c3fe4ea803aaa5a
     elif location == "remote":
-        if choice == 1:
-            os.system("ssh {} date".format(Server_IP))
-        elif choice == 2:
-            os.system("ssh {} cal".format(Server_IP))
-        elif choice == 3:
-            os.system("")
-        elif choice == 4:
-            name = str(input("Enter the name of user you want to add: "))
-            os.system("ssh {} useradd {}".format(Server_IP,name))
-        elif choice == 5:
-            filename = str(input("Please enter the name of file with its format: "))
-            os.system("ssh {} touch {}".format(Server_IP,filename))
-            os.system("ssh {} echo \"your file has been created\"".format(Server_IP))
-        elif choice == 6:
-            os.system("")
-        elif choice == 7:
-            programName = str(input("Please enter the program name you want to check if it is installed or not: "))
-            os.system("ssh {} rpm -q {}".format(Server_IP,programName))
-            os.system("tput setaf {}".format(exit_text))#before exiting make text white
-            os.system("tput setab {}".format(exit_background))#and background black
-            os.system("clear")#clear the screen
-            exit()
-        elif choice == 8:
-            softwareName = input("Please enter the software name you want to find  location:")
-            os.system("ssh {} which {}".format(Server_IP,softwareName))
-        elif choice == 9:
-            programName = input("Please enter the program name you want to kill: ")
-            os.system("ssh {} killall {}".format(Server_IP,programName))
-
-    os.system("tput setaf {}".format(continue_text))
-    os.system("tput setab {}".format(continue_background))
-    input("Enter to continue...")
-    os.system("tput setab {}".format(global_background))
-
-    os.system("clear")
+        options()
+        choice = int(input("Enter your choice : "))
+        remote(choice)
+    
+    escape(choice)

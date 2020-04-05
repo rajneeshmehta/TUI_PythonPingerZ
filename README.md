@@ -8,10 +8,9 @@ This project is Maiintained by
 4. [Ravindra Jangid](https://github.com/ravindrajangid00007)
 5. [Kartik Prajapat](https://github.com/Kart1k5)
 
-
- #<h1>Suggested Features:<h1>
+default Password for TUI software is "Red@hat"
+ <h1>Suggested Features:
  1. add docker with web server configured
  2. Improve GUI like color combinition, Welcome text
  3. ssh login with public and private keys
- 4. 
-
+ 4. Add lock (DONE)
