@@ -31,7 +31,7 @@ if location == "remote":
 #We have to add a connection checking code here
 
 
-choice = -1  #let -1 be the default
+choice = -1  #let -1 be default
 
 while choice != 0:
     Message()
