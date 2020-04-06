@@ -23,6 +23,7 @@ default Password for TUI software is "Red@hat"
 - [ ] After we press 0 to exit it still ask for press to continue.
 - [ ] Docker menu doesn't ask for Press to continue.
 - [ ] Main menu is still messed. Need more premium text for menu.
+- [ ] Typing worng password more than two times Clear Message too(in r_protect function)
 
 
 ## Mention any other problem and Suggestion here
