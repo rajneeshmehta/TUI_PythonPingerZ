@@ -54,6 +54,14 @@ def protect():
             os.system("tput setaf 1")
             os.system("tput setab 15")
             print("Error Wrong Password!!")
+            o =input("\t\t\bDo you want to try again:yes/No  :")
+            if o=='No':
+                os.system("tput setab 0")
+                os.system("tput setaf 7")
+                exit()
+            else:
+                os.system("clear")
+                Message()
 
 #--------------------------------------------------------------
 def options():
