@@ -1,5 +1,5 @@
 #import neccessory module
-import os 
+import os
 import getpass as gp
 #these variable acts as switch for changing the color
 global_background = 63
@@ -40,7 +40,7 @@ def Message():
 
 #-------------------------------------------------------------
 def protect():
-    
+
     password =""
     while password !=key:
         os.system("tput cup 10 15") # move the text to 10 row and 15 column
@@ -61,21 +61,21 @@ def options():
     os.system("tput setaf {}".format(options_text))
     os.system("tput setab {}".format(options_background))
     print("""
-    Press 1: to see Date                         
-    Press 2 :to check cal                        
-    Press 3 :conf web server*                    
-    Press 4 :to ceate user                       
-    Press 5 :create file                         
-    Press 6 :to setup NetWork*                   
+    Press 1: to see Date
+    Press 2 :to check cal
+    Press 3 :conf web server
+    Press 4 :to ceate user
+    Press 5 :create file
+    Press 6 :to setup NetWork*
     Press 7 :to check program is installed or not
-    press 8 :to find location of software        
-    press 9 :to kill any process                 
-    press 10:to enter in docker world            
-    Press 0 :to exit                             
+    press 8 :to find location of software
+    press 9 :to kill any process
+    press 10:to enter in docker world
+    Press 0 :to exit
     * Not completed                              """)
     os.system("tput setaf {}".format(choice_text))
     os.system("tput setab {}".format(choice_background))
-    
+
 #--------------------------------------------------------------
 def local(choice):
     if choice == 1:
@@ -83,7 +83,11 @@ def local(choice):
     elif choice == 2:
         os.system("cal")
     elif choice == 3:
-        os.system("")
+        os.system("systemctl disable firewalld")
+        os.system("systemctl enable httpd")
+        os.system("touch /var/www/html/index.html")
+        os.system("echo \"Welcome to your web page\" > /var/www/html/index.html")
+        os.system("firefox localhost")
     elif choice == 4:
         name = str(input("Enter the name of user you want to add: "))
         os.system("useradd {}".format(name))
@@ -102,11 +106,11 @@ def local(choice):
     elif choice == 9:
         programName = input("Please enter the program name you want to kill: ")
         os.system("killall {}".format(programName))
-    elif choice ==10: 
+    elif choice ==10:
         Message()
         docker()
     input("Enter to continue....")
-     
+
 #-----------------------------------------------------------------
 def remote(choice,Server_IP):
     if choice == 1:
@@ -141,8 +145,8 @@ def remote(choice,Server_IP):
     os.system("tput setaf {}".format(continue_text))
     os.system("tput setab {}".format(continue_background))
     input("Enter to continue...")
-    
-#-----------------------------------------------------------------    
+
+#-----------------------------------------------------------------
 def escape(choice):
     if choice == 0:
         os.system("tput setaf {}".format(exit_text))#before exiting make text white
@@ -167,20 +171,20 @@ def r_protect():
 #------------------------------------------------------------------
 def docker():
     while True:
-        print("\t\t\tWELCOME TO DOCKER")        
-        print(""" press 1: to see information about docker 
-              press 2: to see images in our system
-              press 3: to see containers in our system
-              press 4: to pull any image from public registry
-              press 5: to launch any image
-              press 6: to see history of images launched
-              press 7: to launch stoped container
-              press 8: to stop container[container name needed]
-              press 9: to rm container from system[ container ID needed]
-              press 10: to remove IMAGE from system
-              press 11: to delete all container
-              press 12: to use Developer's mod
-              press 13: to use Advance Docker
+        print("\t\t\tWELCOME TO DOCKER")
+        print(""" press 1: to see information about docker
+                  press 2: to see images in our system
+                  press 3: to see containers in our system
+                  press 4: to pull any image from public registry
+                  press 5: to launch any image
+                  press 6: to see history of images launched
+                  press 7: to launch stoped container
+                  press 8: to stop container[container name needed]
+                  press 9: to rm container from system[ container ID needed]
+                  press 10: to remove IMAGE from system
+                  press 11: to delete all container
+                  press 12: to use Developer's mod
+                  press 13: to use Advance Docker
 press 0:to exit from Docker's World""")
         choice =int(input("ENTER THE CHOICE"))
         if choice == 1:
@@ -189,10 +193,10 @@ press 0:to exit from Docker's World""")
             os.system("docker image ls")
         elif choice == 3:
             os.system("docker container ps")
-        elif choice ==4: 
+        elif choice ==4:
             nameOfImage=input("ENTER THE NAME OF IMAGE YOU WANT TO PULL")
             os.system("docker pull {}".format(nameOfImage))
-        elif choice ==5: 
+        elif choice ==5:
             nameOfImage=input("Enter the name of Image")
             option = input("Do you want to Nomaenclature of container:yes/No")
             if option =='No':
@@ -213,10 +217,10 @@ press 0:to exit from Docker's World""")
         elif choice ==6:
             os.system("docker container ps -a")
         elif choice ==7:
-            ContainerName =input("Enter the name of container")    
+            ContainerName =input("Enter the name of container")
             os.system("docker start {}".format(ContainerName))
             option =input("Do you want to enter in container :yes/No")
-            if option =='yes':             
+            if option =='yes':
                 os.system("docker attach {}".format(ContainerName))
         elif choice ==8:
             nameofContainer= input("Enter the name of container to be stoped")
@@ -242,7 +246,7 @@ press 0:to exit from Docker's World""")
                     nameOfDriver=input(""""Enter Name Of Drive
                                        1:bridge
                                        2:host
-                                       3:null""") 
+                                       3:null""")
                     if nameOfDriver=='bridge' or nameOfDriver=='host' or nameOfDriver =='null':
                         nameOfNetwork=input("Enter Name Of Network")
                         os.system("docker network create --driver {} {}".format(nameOfDriver,nameOfNetwork))
@@ -257,8 +261,7 @@ press 0:to exit from Docker's World""")
                 elif choice ==0:
                     break
         elif choice ==0:
-            
+
             os.system("tput setab 0")
             os.system("tput setaf 7")
             break
-    
