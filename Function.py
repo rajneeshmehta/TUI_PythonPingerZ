@@ -71,6 +71,7 @@ def options():
     press 8 :to find location of software
     press 9 :to kill any process
     press 10:to enter in docker world
+    press 11:to create partition
     Press 0 :to exit
     * Not completed                              """)
     os.system("tput setaf {}".format(choice_text))
@@ -109,6 +110,9 @@ def local(choice):
     elif choice ==10:
         Message()
         docker()
+    elif choice == 11:
+        hardisk = input("enter the hardisk name")
+        os.system("fdisk {}".format(hardisk))
     input("Enter to continue....")
 
 #-----------------------------------------------------------------
@@ -141,6 +145,9 @@ def remote(choice,Server_IP):
     elif choice == 9:
         programName = input("Please enter the program name you want to kill: ")
         os.system("ssh {} killall {}".format(Server_IP,programName))
+    elif choice == 11:
+        hardisk = input("enter the hardisk name")
+        os.system("ssh {} fdisk {}".format(server_IP,hardisk))
 
     os.system("tput setaf {}".format(continue_text))
     os.system("tput setab {}".format(continue_background))
@@ -159,7 +166,7 @@ def r_protect():
         passwd = gp.getpass("enter your password")
         realone = "rgrkr"
         if passwd == realone:
-            print("authentication secessfull")
+            print("authentication successfull")
             break
         else:
             print("authentication failed")
