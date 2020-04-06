@@ -10,7 +10,7 @@ This project is Maiintained by
 
 default Password for TUI software is "Red@hat"
 
-#Suggested Features:#
+#Suggested Features:
 - [ ] Add docker with web server configured 
 - [ ] Improve GUI like color combinition, Welcome text 
 - [ ] Ssh login with public and private keys 
@@ -18,7 +18,7 @@ default Password for TUI software is "Red@hat"
 
 
 
-#Problems:#
+#Problems:
 - [ ] Command with long output(like docker info).
 - [ ] After we press 0 to exit it still ask for press to continue.
 - [ ] Docker menu doesn't ask for Press to continue.
