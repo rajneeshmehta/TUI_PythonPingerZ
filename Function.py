@@ -39,7 +39,7 @@ def Message():
     os.system("tput setaf {}".format(welcome_text))
     os.system("tput setab {}".format(welcome_background))
 
-    print(f"{' ':<15}{nows:>65}")
+#    print(f"{' ':<15}{nows:>65}")
 
     print("\t\t\t\tWelcome to Our TUI")
 
@@ -122,6 +122,7 @@ def local(choice):
     elif choice == 15:
         Message()
         snake()
+        Message()
         
     elif choice ==10:
         Message()
