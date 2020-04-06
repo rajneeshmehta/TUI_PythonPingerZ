@@ -1,7 +1,7 @@
 # TUI_PythonPingerZ
 This repositary is project for IIEC_RISE 1.0 .
 This project contain source code for TUI program, Which is integration of python and linux.
-This project is Maiintained by 
+This project is Maintained by 
 1. [Rajneesh Mehta](https://github.com/rajneeshmehta/)
 2. [Rohan Khandelwal](https://github.com/BattleKingRet)
 3. [Gourav Singh Jadon](https://github.com/gourav-jadon)
@@ -27,3 +27,8 @@ default Password for TUI software is "Red@hat"
 
 
 ## Mention any other problem and Suggestion here
+
+# Screen of Software
+![Password Screen](https://github.com/rajneeshmehta/TUI_PythonPingerZ/blob/master/Uitility/Password_screen.jpg)
+![Session Option](https://github.com/rajneeshmehta/TUI_PythonPingerZ/blob/master/Uitility/host_screen.jpg)
+![Main Menu](https://github.com/rajneeshmehta/TUI_PythonPingerZ/blob/master/Uitility/Main_menu.jpg)
