@@ -83,6 +83,7 @@ def options():
     press 8 :to find location of software
     press 9 :to kill any process
     press 10:to enter in docker world
+    press 11:to go inside hardisk
     Press 0 :to exit
     * Not completed                              """)
     os.system("tput setaf {}".format(choice_text))
@@ -125,6 +126,9 @@ def local(choice):
     elif choice ==10:
         Message()
         docker()
+    elif choice == 11:
+        insidehardisk()
+        
     input("Enter to continue....")
 
 #-----------------------------------------------------------------
@@ -175,7 +179,7 @@ def r_protect():
         passwd = gp.getpass("enter your password")
         realone = "rgrkr"
         if passwd == realone:
-            print("authentication secessfull")
+            print("authentication successfull")
             break
         else:
             print("authentication failed")
@@ -185,6 +189,16 @@ def r_protect():
             else:
                 os.system("clear")
 #------------------------------------------------------------------
+def insidehardisk():
+    
+    hardisk = input("enter hardisk name")
+    print("""             press m:to take help through menu
+             press n:to create partition
+             press w:to save current partition
+             press q:to exit
+             press d:to delete partition""")
+    os.system("fdisk {}".format(hardisk))
+ #------------------------------------------------------------------   
 def docker():
     while True:
         print("\t\t\tWELCOME TO DOCKER")
