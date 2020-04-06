@@ -2,7 +2,7 @@
 from Function import *
 
 Message()
-r_protect() # show message and ask for pasword
+protect() # show message and ask for pasword
 Message() #If passwaord is right then clear screen and show message again
 os.system("tput setaf {}".format(location_text))
 os.system("tput setab {}".format(location_background))
