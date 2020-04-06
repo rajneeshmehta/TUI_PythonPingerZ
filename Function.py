@@ -71,7 +71,7 @@ def options():
     press 8 :to find location of software
     press 9 :to kill any process
     press 10:to enter in docker world
-    press 11:to create partition
+    press 11:to go inside hardisk
     Press 0 :to exit
     * Not completed                              """)
     os.system("tput setaf {}".format(choice_text))
@@ -111,8 +111,8 @@ def local(choice):
         Message()
         docker()
     elif choice == 11:
-        hardisk = input("enter the hardisk name")
-        os.system("fdisk {}".format(hardisk))
+        insidehardisk()
+        
     input("Enter to continue....")
 
 #-----------------------------------------------------------------
@@ -145,9 +145,6 @@ def remote(choice,Server_IP):
     elif choice == 9:
         programName = input("Please enter the program name you want to kill: ")
         os.system("ssh {} killall {}".format(Server_IP,programName))
-    elif choice == 11:
-        hardisk = input("enter the hardisk name")
-        os.system("ssh {} fdisk {}".format(server_IP,hardisk))
 
     os.system("tput setaf {}".format(continue_text))
     os.system("tput setab {}".format(continue_background))
@@ -176,6 +173,16 @@ def r_protect():
             else:
                 os.system("clear")
 #------------------------------------------------------------------
+def insidehardisk():
+    
+    hardisk = input("enter hardisk name")
+    print("""             press m:to take help through menu
+             press n:to create partition
+             press w:to save current partition
+             press q:to exit
+             press d:to delete partition""")
+    os.system("fdisk {}".format(hardisk))
+ #------------------------------------------------------------------   
 def docker():
     while True:
         print("\t\t\tWELCOME TO DOCKER")
