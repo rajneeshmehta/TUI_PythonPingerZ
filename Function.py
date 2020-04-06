@@ -1,6 +1,11 @@
 #import neccessory module
 import os
+import datetime
 import getpass as gp
+
+import math
+import random
+import pygame
 #these variable acts as switch for changing the color
 global_background = 63
 welcome_text = 4
@@ -22,6 +27,8 @@ continue_background = 13
 password_background = 2
 password_text = 15
 
+now = datetime.datetime.now()
+nows = now.strftime("%Y-%m-%d %H:%M:%S")
 key = "Red@hat"
 #-------------------------------------------------------------
 def Message():
@@ -32,11 +39,15 @@ def Message():
     os.system("tput setaf {}".format(welcome_text))
     os.system("tput setab {}".format(welcome_background))
 
+    print(f"{' ':<15}{nows:>65}")
+
     print("\t\t\t\tWelcome to Our TUI")
 
     os.system("tput setaf {}".format(created_text))
     os.system("tput setab {}".format(created_background))
     print("\t\t\t     Created by PythonPingerZ     ")
+
+    #os.system("while :; do echo -n -e \"`tput cup 0 72``date +%T``sleep 1`\b\b\b\b\b\b\b\b\"; done &")
 
 #-------------------------------------------------------------
 def protect():
@@ -58,6 +69,7 @@ def protect():
 #--------------------------------------------------------------
 def options():
     Message()
+    
     os.system("tput setaf {}".format(options_text))
     os.system("tput setab {}".format(options_background))
     print("""
@@ -106,6 +118,10 @@ def local(choice):
     elif choice == 9:
         programName = input("Please enter the program name you want to kill: ")
         os.system("killall {}".format(programName))
+    elif choice == 15:
+        Message()
+        snake()
+        
     elif choice ==10:
         Message()
         docker()
@@ -265,3 +281,9 @@ press 0:to exit from Docker's World""")
             os.system("tput setab 0")
             os.system("tput setaf 7")
             break
+
+#----------------------------------------------------------------------
+def snake():
+    os.system("pip3 install pygame")
+    os.system("sudo dnf install -y python3-tkinter")
+    os.system("python3 snake.py")
