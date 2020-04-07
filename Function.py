@@ -1,6 +1,11 @@
 #import neccessory module
 import os
+import datetime
 import getpass as gp
+
+import math
+import random
+import pygame
 #these variable acts as switch for changing the color
 global_background = 63
 welcome_text = 4
@@ -22,6 +27,8 @@ continue_background = 13
 password_background = 2
 password_text = 15
 
+now = datetime.datetime.now()
+nows = now.strftime("%Y-%m-%d %H:%M:%S")
 key = "Red@hat"
 #-------------------------------------------------------------
 def Message():
@@ -32,11 +39,15 @@ def Message():
     os.system("tput setaf {}".format(welcome_text))
     os.system("tput setab {}".format(welcome_background))
 
+    print(f"{' ':<15}{nows:>65}")
+
     print("\t\t\t\tWelcome to Our TUI")
 
     os.system("tput setaf {}".format(created_text))
     os.system("tput setab {}".format(created_background))
     print("\t\t\t     Created by PythonPingerZ     ")
+
+    #os.system("while :; do echo -n -e \"`tput cup 0 72``date +%T``sleep 1`\b\b\b\b\b\b\b\b\"; done &")
 
 #-------------------------------------------------------------
 def protect():
@@ -54,18 +65,11 @@ def protect():
             os.system("tput setaf 1")
             os.system("tput setab 15")
             print("Error Wrong Password!!")
-            o =input("\t\t\bDo you want to try again:yes/No  :")
-            if o=='No':
-                os.system("tput setab 0")
-                os.system("tput setaf 7")
-                exit()
-            else:
-                os.system("clear")
-                Message()
 
 #--------------------------------------------------------------
 def options():
     Message()
+    
     os.system("tput setaf {}".format(options_text))
     os.system("tput setab {}".format(options_background))
     print("""
@@ -80,6 +84,8 @@ def options():
     press 9 :to kill any process
     press 10:to enter in docker world
     press 11:to go inside hardisk
+    Press 14:to Play Tic-Tac-Toe Game
+    Press 15:to Play Snake Game
     Press 0 :to exit
     * Not completed                              """)
     os.system("tput setaf {}".format(choice_text))
@@ -115,11 +121,21 @@ def local(choice):
     elif choice == 9:
         programName = input("Please enter the program name you want to kill: ")
         os.system("killall {}".format(programName))
+        
     elif choice ==10:
         Message()
         docker()
     elif choice == 11:
         insidehardisk()
+
+    elif choice == 14:
+        Message()
+        tictac()
+        Message()
+    elif choice == 15:
+        Message()
+        snake()
+        Message()
         
     input("Enter to continue....")
 
@@ -287,3 +303,26 @@ press 0:to exit from Docker's World""")
             os.system("tput setab 0")
             os.system("tput setaf 7")
             break
+
+#----------------------------------------------------------------------
+def snake():
+    print("\t\t\t\tLaunching Game.....")
+    os.system("sleep 1s")
+    print("Checking for Updates\n")
+    os.system("sleep 2s")
+    print("""It may take some time depending on your internet connectivity and size of update\n\n""")
+    os.system("sleep 2s")
+    os.system("pip3 install pygame")
+    os.system("sudo dnf install -y python3-tkinter")
+    os.system("python3 snake.py")
+
+#----------------------------------------------------------------------
+def tictac():
+    print("\t\t\t\tLaunching Game.....")
+    os.system("sleep 1s")
+    print("Checking for Updates\n")
+    os.system("sleep 2s")
+    print("""It may take some time depending on your internet connectivity and size of update\n\n""")
+    os.system("sleep 2s")
+    os.system("sudo dnf install -y python3-tkinter")
+    os.system("python3 tictactoe.py")
