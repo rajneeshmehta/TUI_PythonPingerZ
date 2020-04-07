@@ -5,7 +5,7 @@ import getpass as gp
 
 import math
 import random
-import pygame
+
 #these variable acts as switch for changing the color
 global_background = 63
 welcome_text = 4
