@@ -83,8 +83,7 @@ def options():
     press 9 :to kill any process
     press 10:to enter in docker world
     press 11:to go inside hardisk
-    Press 14:to Play Tic-Tac-Toe Game
-    Press 15:to Play Snake Game
+    Press 12:for Games
     Press 0 :to exit
     * Not completed                              """)
     os.system("tput setaf {}".format(choice_text))
@@ -127,14 +126,9 @@ def local(choice):
     elif choice == 11:
         insidehardisk()
 
-    elif choice == 14:
+    elif choice == 12:
         Message()
-        tictac()
-        Message()
-    elif choice == 15:
-        Message()
-        snake()
-        Message()
+        games()
         
     input("Enter to continue....")
 
@@ -325,3 +319,32 @@ def tictac():
     os.system("sleep 2s")
     os.system("sudo dnf install -y python3-tkinter")
     os.system("python3 tictactoe.py")
+
+#-----------------------------------------------------------------------
+
+def games():
+    while True:
+        print("\n\n\t\t\tWELCOME TO GAMES")
+        print(""" 
+        Press 1: To Play Tic-Tac-Toe Game
+        Press 2: To Play Snake Game
+
+        Press 0: To Exit From Games\n\n""")
+
+        os.system("tput setaf {}".format(choice_text))
+        os.system("tput setab {}".format(choice_background))
+        choiceg =int(input("ENTER THE CHOICE"))
+        if choiceg == 1:
+            Message()
+            tictac()
+            Message()
+        elif choiceg == 2:
+            Message()
+            snake()
+            Message()
+
+        elif choiceg == 0: 
+            os.system("tput setaf {}".format(choice_text))
+            os.system("tput setab {}".format(choice_background))
+            break
+
