@@ -13,7 +13,7 @@ if location == "remote":
     os.system("tput setab {}".format(server_ip_background))
     Server_IP = input("Enter the server IP: ")
     print("\nChecking connection......")
-    os.system("sleep 2s")
+    os.system("sleep 3s")
 
 #We have to add a connection checking code here
 
